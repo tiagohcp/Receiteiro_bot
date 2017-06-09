@@ -35,7 +35,6 @@ def converteLista(item, cont): #Busca o ingrediente informado e Converte para um
                 receitas = getListOfRecipes(item, cont)
 
             if ultima == receitas['recipe_id']:
-                print("ERROR!!!")
                 return [1, 1]
             ultima = 0
             ultima = receitas['recipe_id']
@@ -52,22 +51,10 @@ def converteLista(item, cont): #Busca o ingrediente informado e Converte para um
             qtd = receitas['qtd']
             #Formatação da mensagem que será exibida no bot
             string = ""
-
-            #print("RESULTADO\n",resultado)
-            #print("FOTO\n",foto)
             
             for i in resultado:
                 string += i + "\n"
             return [string, foto, qtd]
-
-
-#resp = converteLista("uihuihiuh")
-#for i in range(10):
-#    resp = converteLista("rice",i)
-#    print(resp[0])
-#    print(resp[1])
-
-######tá com pau na variavel de inicio
 
 
 

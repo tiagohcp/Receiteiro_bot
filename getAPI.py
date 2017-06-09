@@ -9,7 +9,6 @@ inicio5 = 26
 
 
 def getTagAPI(api, cod): #Faz toda a manipulação da string baixada da API
-        #global inicio
         tam = 0
         ult=0
 
@@ -94,7 +93,7 @@ def getListOfRecipes(item, cont): #Chama a API para buscar as receitas com o ing
         textAPI=text.decode('utf-8')
 
         qtd = int(textAPI[textAPI.find(':')+2:textAPI.find(',')])
-        print(qtd)
+
         if qtd == 0:
                 return qtd
         elif qtd < 10 :
@@ -120,14 +119,10 @@ def getListOfRecipes(item, cont): #Chama a API para buscar as receitas com o ing
 
                 if temp[3]==1:
                         break
-        #print(lista)
+
         lista['qtd']=qtd
         return lista
 
-#for i in range (10):
-#        resp = getListOfRecipes("rice",i)
-#        print(resp)
-#        print("\n\n\n")
 
 
 #procura receita http://food2fork.com/api/search?key=4fe184badd0c478ebe05f532ba06fb8b&q=shredded%20chicken
