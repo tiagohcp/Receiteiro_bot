@@ -16,9 +16,7 @@ def start(bot, update): #Inicia o Bot
     me = bot.get_me()
     msg = "Escolha um comando: \n /support \n /settings \n /buscar"
 
-    main_menu_keyboard = [[telegram.KeyboardButton('/support')],
-                          [telegram.KeyboardButton('/settings')],
-                          [telegram.KeyboardButton('/help')],
+    main_menu_keyboard = [[telegram.KeyboardButton('/start')],
                           [telegram.KeyboardButton('/buscar')]]
     reply_kb_markup = telegram.ReplyKeyboardMarkup(main_menu_keyboard,
                                                    resize_keyboard=True,
@@ -178,8 +176,6 @@ def receita_escolhida(bot, update): #Testa se o comando é uma ID ou um comando 
         
 #Criação e inicio dos Handler
 start_handler = CommandHandler("start", start)
-#help_handler = CommandHandler("help", help)
-#support_handler = CommandHandler("support", support)
 buscar_handler = CommandHandler("buscar", buscar)
 pesquisar_handler = MessageHandler((Filters.text), pesquisar)
 receita_escolhida_handler = MessageHandler((Filters.command),receita_escolhida)
@@ -187,9 +183,7 @@ button_CQHandler = CallbackQueryHandler(button)
 dispatcher.add_handler(button_CQHandler)
 dispatcher.add_handler(pesquisar_handler)
 dispatcher.add_handler(start_handler)
-#dispatcher.add_handler(help_handler)
 dispatcher.add_handler(buscar_handler)
-#dispatcher.add_handler(support_handler)
 dispatcher.add_handler(receita_escolhida_handler)
 
 prox_handler = CommandHandler("prox", prox)

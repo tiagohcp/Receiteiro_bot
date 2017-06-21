@@ -61,7 +61,7 @@ def getTagAPI(api, cod): #Faz toda a manipulação da string baixada da API
 def getRecipe(item): #Chama a API para buscar a receita solicitada
         global receita
 
-        response = requests.get('http://food2fork.com/api/get?key=099563badfe8295493e35cf65e82dbbd&rId='+item)
+        response = requests.get('http://food2fork.com/api/get?key=4fe184badd0c478ebe05f532ba06fb8b&rId='+item)
         text=response.content
         textAPI=text.decode('utf-8')
 
@@ -88,7 +88,7 @@ def getListOfRecipes(item, cont): #Chama a API para buscar as receitas com o ing
                 inicio10 = 27
                 inicio5 = 26
 
-        response = requests.get('http://food2fork.com/api/search?key=099563badfe8295493e35cf65e82dbbd&q='+item)          
+        response = requests.get('http://food2fork.com/api/search?key=4fe184badd0c478ebe05f532ba06fb8b&q='+item)          
         text=response.content
         textAPI=text.decode('utf-8')
 
